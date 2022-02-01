@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/myprincessbirthday/static/css/main.8e75c337.css",
+    "main.js": "/myprincessbirthday/static/js/main.825aa771.js",
+    "index.html": "/myprincessbirthday/index.html",
+    "main.8e75c337.css.map": "/myprincessbirthday/static/css/main.8e75c337.css.map",
+    "main.825aa771.js.map": "/myprincessbirthday/static/js/main.825aa771.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8e75c337.css",
+    "static/js/main.825aa771.js"
+  ]
+}
