@@ -1,13 +1,299 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0 auto;
+  padding: 0 auto;
+  box-sizing: border-box;
+}
+.main {
+  margin-top: 10px;
+  border-radius: 20px;
+}
+.main img {
+  background-size: cover;
+  width: 100vw;
+  height: 90vh;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.main h1 {
+  font-size: 25px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  color: rgb(214, 21, 21);
+  font-family: "Dancing Script", cursive;
+  font-family: "Rubik Beastly", cursive;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  animation: shiba 2s infinite linear;
+  position: fixed;
+  top: 50px;
+}
+@keyframes shiba {
+  0% {
+    color: #ee5253;
+  }
+  10% {
+    color: palegreen;
+  }
+  20% {
+    color: purple;
+  }
+  30% {
+    color: yellow;
+  }
+  40% {
+    color: green;
+  }
+  50% {
+    color: red;
+  }
+  60% {
+    color: cyan;
+  }
+  70% {
+    color: blue;
+  }
+  80% {
+    color: blueviolet;
+  }
+  90% {
+    color: brown;
+  }
+  100% {
+    color: #2ed573;
+  }
+}
+.main h3 {
+  font-size: 30px;
+  color: #ee5253;
+  font-weight: bolder;
+  font-family: 'Pacifico', cursive;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-transform: capitalize;
+}
+.main h3 span {
+  color: #2ed573;
+}
+.main p {
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+  color: #ee5253;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #2ed573;
+  border-radius: 10px;
+  box-shadow: 1px 2px 20px #2ed573;
+}
+.shobimian {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 35px;
+  margin-top: 5px;
+  margin-left: 20%;
+  background: rgba(213, 32, 32, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+  position: fixed;
+  bottom: 10px;
+}
+.shobimian span {
+  margin-bottom: 5px;
+  padding: 5px;
+  font-size: 28px;
+}
+.shobimian span:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+/* ............................Poetry section..................................... */
+.top-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  margin-top: 3px;
+  background: rgba(255, 251, 251, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 10px;
+}
+.card-div-scroller {
+  width: 100%;
+  height: 490px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  background: rgba(255, 251, 251, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+.card-div-scroller::-webkit-scrollbar {
+  width: 1vw;
+}
+.card-div-scroller::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #ee5253;
+}
+.card-div-scroller::-webkit-scrollbar-track {
+  border-radius: 50px;
+  background-color: transparent;
+  overflow: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+.Left-Nav {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #2ed573; */
+  margin-top: 15px;
+}
+.Left-Nav h2 {
+  margin-left: -19px;
+  margin-top: 15px;
+  font-weight: bolder;
+  animation: shiba 2s infinite linear;
+  font-family: 'Comforter', cursive;
+}
+.right-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 70%;
+  height: 50px;
+  /* background-color: #ee5253; */
+  margin-right: 15px;
+}
+.right-nav span {
+  font-size: 30px;
+  padding: 10px 5px;
+  margin-right: -1px;
+}
+.right-nav span:hover {
+  cursor: pointer;
+}
+.logo img {
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-bottom: 2px;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  box-shadow: 1px 2px 15px #2ed573;
+}
+.logo img:hover {
+  cursor: pointer;
+}
+.logo1 {
+  animation: logo1 5s infinite linear;
+}
+.logo2 {
+  animation: logo2 5s infinite linear;
+}
+@keyframes logo1 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes logo2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.mian {
+  color: #ee5253;
+  animation: shobi 3s infinite linear;
+}
+@keyframes shobi {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.4);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* ..................Modals................................... */
+.bgHeart {
+  font-size: 8rem;
+  color: #ee5253;
+  animation: shobi 2s infinite linear;
+}
+.heartmodal h1 {
+  font-weight: bolder;
+  font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
+  animation: shiba 10s infinite;
+}
+.princess h1 {
+  font-weight: bolder;
+  font-family: "Times New Roman", Times, serif;
+  animation: shiba 5s infinite linear;
+}
+.princess p {
+  color: aliceblue;
+  font-weight: bolder;
+  font-family: "Times New Roman", Times, serif;
+}
+.p-heart span {
+  padding: 0px 10px;
+}
+.beat {
+  animation: shobi 2s infinite linear;
+}
+.Eyes { 
+  font-family: 'Noto Nastaliq Urdu', serif;
+  margin-top: 10px;
+  margin-right: 10px;
+  line-height: 2.2rem;
+  text-align: right;
+}
+.card-p{
+  /* margin-top: 50px; */
+  color: #2ed573;
+  text-align: center;
+  /* width: 210px;
+  margin-top: 50px; */
+  font-family: 'Noto Nastaliq Urdu', serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid #2ed573;
+  box-shadow: 1px 2px 20px #2ed573;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  line-height: 2.2rem;
 }
