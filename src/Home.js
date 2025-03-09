@@ -18,7 +18,7 @@ const Home = () => {
                   alt="First slide"
                 />
                 <Carousel.Caption>
-                  <h1 align="center">Happy Birthday</h1>
+                  <h1 align="center">Happy S Birthday</h1>
                   <h3>
                     T<span>O</span>S<span>H</span>I<span>B</span>A{" "}
                     <span>Z</span>U<span>F</span>I<span>Q</span>A<span>R</span>
