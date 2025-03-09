@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./Loading";
 import "./index.css";
-import { Container, Button } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
+import { Container, Button, Modal, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Data from "./Data.json";
 import {
@@ -12,8 +11,7 @@ import {
   FaHeartbeat,
   FaHeart,
 } from "react-icons/fa";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Modal from "react-bootstrap/Modal";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Poetry = () => {
   const [activeModal, setActiveModal] = useState(null);
@@ -23,7 +21,7 @@ const Poetry = () => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2500);
-    return () => clearTimeout(timer); // Cleanup timeout
+    return () => clearTimeout(timer); // Cleanup function
   }, []);
 
   return (
@@ -32,45 +30,43 @@ const Poetry = () => {
         <Loading />
       ) : (
         <Container>
-          <div className="main-section">
-            <div className="text-center">
-              <div className="top-nav mt-2">
-                <ul className="Left-Nav">
-                  <h2 className="text-center">Shiba</h2>
-                </ul>
-                <ul className="right-nav">
-                  <span className="mian" style={{ marginRight: "10px" }}>
-                    <i onClick={() => setActiveModal("cake")}>🎂</i>
-                  </span>
-                  <span>
-                    <FaHeartbeat className="mian" onClick={() => setActiveModal("heart")} />
-                  </span>
-                  <span className="logo">
-                    <img
-                      className="logo1"
-                      src="/images/logo1.jpeg"
-                      alt="logo1"
-                      onClick={() => setActiveModal("logo1")}
-                    />
-                  </span>
-                  <span className="logo">
-                    <img
-                      className="logo2"
-                      src="/images/logo2.jpeg"
-                      alt="logo2"
-                      onClick={() => setActiveModal("logo2")}
-                    />
-                  </span>
-                </ul>
+          {/* Navigation Section */}
+          <div className="main-section text-center">
+            <div className="top-nav mt-2">
+              <h2 className="text-center">Shiba</h2>
+              <div className="right-nav">
+                <span className="mian" style={{ marginRight: "10px" }}>
+                  <i onClick={() => setActiveModal("cake")}>🎂</i>
+                </span>
+                <span>
+                  <FaHeartbeat className="mian" onClick={() => setActiveModal("heart")} />
+                </span>
+                <span className="logo">
+                  <img
+                    className="logo1"
+                    src="/images/logo1.jpeg"
+                    alt="logo1"
+                    onClick={() => setActiveModal("logo1")}
+                  />
+                </span>
+                <span className="logo">
+                  <img
+                    className="logo2"
+                    src="/images/logo2.jpeg"
+                    alt="logo2"
+                    onClick={() => setActiveModal("logo2")}
+                  />
+                </span>
               </div>
             </div>
           </div>
 
+          {/* Poetry Cards */}
           <div className="card-div-scroller">
-            {Data.map((item) => (
+            {Data.map((item, index) => (
               <Card
-                key={item.id}
-                className="bg-white text-white mt-4"
+                key={index}
+                className="bg-white text-dark mt-4"
                 style={{
                   border: "2px solid white",
                   borderRadius: "7px",
@@ -81,12 +77,12 @@ const Poetry = () => {
               >
                 <Card.Img
                   src={item.image}
+                  alt="Poetry"
                   style={{
                     width: "100%",
                     height: "450px",
                     borderRadius: "7px",
                   }}
-                  alt="Card"
                 />
                 <Card.ImgOverlay>
                   <Card.Text className="card-p">{item.poetry}</Card.Text>
@@ -95,25 +91,20 @@ const Poetry = () => {
             ))}
           </div>
 
+          {/* Navigation Buttons */}
           <div className="shobimian">
-            <span>
-              <Link to="/wishes">
-                <FaAngleDoubleLeft style={{ color: "#2ed573" }} />
-              </Link>
-            </span>
-            <span>
-              <Link to="/">
-                <FaHome style={{ color: "#dddddd" }} />
-              </Link>
-            </span>
-            <span className="nextBtn">
-              <Link to="/poetry">
-                <FaAngleDoubleRight style={{ color: "black" }} />
-              </Link>
-            </span>
+            <Link to="/wishes">
+              <FaAngleDoubleLeft style={{ color: "#2ed573" }} />
+            </Link>
+            <Link to="/">
+              <FaHome style={{ color: "#dddddd" }} />
+            </Link>
+            <Link to="/poetry">
+              <FaAngleDoubleRight style={{ color: "black" }} />
+            </Link>
           </div>
 
-          {/* Modals */}
+          {/* Modals Section */}
           <Modal show={activeModal === "cake"} onHide={() => setActiveModal(null)} backdrop="static">
             <Modal.Header closeButton>
               <Modal.Title>Best Wishes For You 🍰🧁</Modal.Title>
@@ -121,25 +112,23 @@ const Poetry = () => {
             <Modal.Body className="text-center">
               <img
                 src="/images/modalimg.gif"
+                alt="Cake"
                 style={{
                   width: "90%",
                   boxShadow: "1px 2px 20px black",
                   borderRadius: "20px",
                   border: "2px solid cyan",
                 }}
-                alt="Cake"
               />
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="danger" onClick={() => setActiveModal(null)}>
-                Close
-              </Button>
+              <Button variant="danger" onClick={() => setActiveModal(null)}>Close</Button>
             </Modal.Footer>
           </Modal>
 
           <Modal show={activeModal === "heart"} onHide={() => setActiveModal(null)} backdrop="static">
             <Modal.Header closeButton>
-              <Modal.Title>Heart For You❤️💗💙</Modal.Title>
+              <Modal.Title>Heart For You ❤️💗💙</Modal.Title>
             </Modal.Header>
             <Modal.Body className="text-center">
               <h1>Toshiba</h1>
@@ -147,9 +136,7 @@ const Poetry = () => {
               <h1>Zulfiqar</h1>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="danger" onClick={() => setActiveModal(null)}>
-                Close
-              </Button>
+              <Button variant="danger" onClick={() => setActiveModal(null)}>Close</Button>
             </Modal.Footer>
           </Modal>
 
@@ -174,15 +161,13 @@ const Poetry = () => {
               </p>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="danger" onClick={() => setActiveModal(null)}>
-                Close
-              </Button>
+              <Button variant="danger" onClick={() => setActiveModal(null)}>Close</Button>
             </Modal.Footer>
           </Modal>
 
           <Modal show={activeModal === "logo2"} onHide={() => setActiveModal(null)} backdrop="static">
             <Modal.Header closeButton>
-              <Modal.Title>Your Hand❤️💗💝</Modal.Title>
+              <Modal.Title>Your Hand ❤️💗💝</Modal.Title>
             </Modal.Header>
             <Modal.Body className="text-center">
               <img
@@ -197,9 +182,7 @@ const Poetry = () => {
               />
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="danger" onClick={() => setActiveModal(null)}>
-                Close
-              </Button>
+              <Button variant="danger" onClick={() => setActiveModal(null)}>Close</Button>
             </Modal.Footer>
           </Modal>
         </Container>
