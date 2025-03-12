@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { FaAngleDoubleRight, FaAngleDoubleLeft, FaHome, FaHeartbeat, FaHeart } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
+import Data from "../Data.json"; // ✅ JSON from src folder
 
 const Poetry = () => {
   const [modals, setModals] = useState({
@@ -20,24 +21,10 @@ const Poetry = () => {
     setModals((prev) => ({ ...prev, [modalName]: !prev[modalName] }));
   };
 
-  const [poetryData, setPoetryData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 2000);
-
-    // Fetch JSON Data
-    fetch("/Data.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to load JSON");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setPoetryData(data);
-      })
-      .catch((error) => console.error("Error loading JSON:", error));
   }, []);
 
   if (isLoading) {
@@ -98,8 +85,8 @@ const Poetry = () => {
       </div>
 
       <div className="card-div-scroller">
-        {poetryData.length > 0 ? (
-          poetryData.map((item) => (
+        {Data.length > 0 ? (
+          Data.map((item) => (
             <Card key={item.id} className="bg-white text-white mt-4"
               style={{
                 border: "2px solid white",
