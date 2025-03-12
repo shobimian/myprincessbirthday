@@ -79,6 +79,72 @@ const Poetry = () => {
                   </Modal.Footer>
                 </Modal>
               </span>
+
+              {/* ✅ logo1 Modal */}
+              <span className="logo">
+                <img  
+                  className="logo1"  
+                  src="../images/logo1.jpeg"  
+                  alt="logo1"  
+                  onClick={() => toggleModal("logo1")}  
+                />
+                <Modal show={modals.logo1} backdrop="static" onHide={() => toggleModal("logo1")}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Love❤️ Your Eyes👁️</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className="text-center">
+                    <img
+                      src="../images/logo1.jpeg"
+                      alt="logo1"
+                      loading="lazy"
+                      style={{
+                        width: "90%",
+                        boxShadow: "1px 2px 20px black",
+                        borderRadius: "20px",
+                        border: "5px solid #ee5253",
+                      }}
+                    />
+                    <p className="Eyes">
+                      میں نے سمجھا تھا کہ تُو ہے تو درخشاں ہے حیات<br/> تیرا غم ہے تو غمِ دہر کا جھگڑا کِیا ہے<br/> 
+                      تیری صورت سے ہے عالم میں بہاروں کو ثبات<br/> تیری آنکھوں کے سوا دنیا میں رکھا کیا ہے
+                    </p>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="danger" onClick={() => toggleModal("logo1")}>Close</Button>
+                  </Modal.Footer>
+                </Modal>
+              </span>
+
+              {/* ✅ logo2 Modal */}
+              <span className="logo">
+                <img  
+                  className="logo2"  
+                  src="../images/logo2.jpeg"  
+                  alt="logo2"  
+                  onClick={() => toggleModal("logo2")}  
+                />
+                <Modal show={modals.logo2} backdrop="static" onHide={() => toggleModal("logo2")}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Your Hand❤️💗💝</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className="text-center">
+                    <img
+                      src="../images/logo2.jpeg"
+                      alt="logo2"
+                      loading="lazy"
+                      style={{
+                        width: "90%",
+                        boxShadow: "1px 2px 20px black",
+                        borderRadius: "20px",
+                        border: "5px solid #ee5253",
+                      }}
+                    />
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="danger" onClick={() => toggleModal("logo2")}>Close</Button>
+                  </Modal.Footer>
+                </Modal>
+              </span>
             </ul>
           </div>
         </div>
