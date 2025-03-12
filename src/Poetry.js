@@ -4,14 +4,7 @@ import "./index.css";
 import { Container, Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import Data from "./Data.json"; 
-import {
-  FaAngleDoubleRight,
-  FaAngleDoubleLeft,
-  FaHome,
-  FaHeartbeat,
-  FaHeart,
-} from "react-icons/fa";
+import { FaAngleDoubleRight, FaAngleDoubleLeft, FaHome, FaHeartbeat, FaHeart } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
 
@@ -27,11 +20,24 @@ const Poetry = () => {
     setModals((prev) => ({ ...prev, [modalName]: !prev[modalName] }));
   };
 
+  const [poetryData, setPoetryData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000);
-    return () => clearTimeout(timer);
+    setTimeout(() => setIsLoading(false), 2000);
+
+    // Fetch JSON Data
+    fetch("/Data.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to load JSON");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setPoetryData(data);
+      })
+      .catch((error) => console.error("Error loading JSON:", error));
   }, []);
 
   if (isLoading) {
@@ -92,25 +98,18 @@ const Poetry = () => {
       </div>
 
       <div className="card-div-scroller">
-        {Data.length > 0 ? (
-          Data.map((item) => (
-            <Card
-              key={item.id}
-              className="bg-white text-white mt-4"
+        {poetryData.length > 0 ? (
+          poetryData.map((item) => (
+            <Card key={item.id} className="bg-white text-white mt-4"
               style={{
                 border: "2px solid white",
                 borderRadius: "7px",
                 width: "85%",
                 margin: "auto",
                 marginBottom: "20px",
-              }}
-            >
-              <Card.Img
-                src={item.image}
-                alt="Card image"
-                loading="lazy"
-                style={{ width: "100%", height: "450px", borderRadius: "7px" }}
-              />
+              }}>
+              <Card.Img src={item.image} alt="Card image" loading="lazy"
+                style={{ width: "100%", height: "450px", borderRadius: "7px" }} />
               <Card.ImgOverlay>
                 <Card.Text className="card-p">{item.poetry}</Card.Text>
               </Card.ImgOverlay>
@@ -122,21 +121,9 @@ const Poetry = () => {
       </div>
 
       <div className="shobimian">
-        <span>
-          <Link to="/wishes">
-            <FaAngleDoubleLeft style={{ color: "#2ed573" }} />
-          </Link>
-        </span>
-        <span>
-          <Link to="/">
-            <FaHome style={{ color: "#dddddd" }} />
-          </Link>
-        </span>
-        <span className="nextBtn">
-          <Link to="/poetry">
-            <FaAngleDoubleRight style={{ color: "black" }} />
-          </Link>
-        </span>
+        <span><Link to="/wishes"><FaAngleDoubleLeft style={{ color: "#2ed573" }} /></Link></span>
+        <span><Link to="/"><FaHome style={{ color: "#dddddd" }} /></Link></span>
+        <span className="nextBtn"><Link to="/poetry"><FaAngleDoubleRight style={{ color: "black" }} /></Link></span>
       </div>
     </Container>
   );
