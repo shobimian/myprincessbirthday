@@ -18,7 +18,7 @@ const Home = () => {
                   alt="First slide"
                 />
                 <Carousel.Caption>
-                  <center><h1 align="center">Happy Birthday</h1></center>
+          
                   <h3>
                     T<span>O</span>S<span>H</span>I<span>B</span>A{" "}
                     <span>Z</span>U<span>F</span>I<span>Q</span>A<span>R</span>
@@ -33,7 +33,7 @@ const Home = () => {
                   alt="Second slide"
                 />
                 <Carousel.Caption>
-                  <h1>Happy Birthday</h1>
+                
                   <h3>
                     S<span>H</span>I<span>B</span>A <span>P</span>R
                     <span>I</span>N<span>C</span>E<span>S</span>S
@@ -52,7 +52,7 @@ const Home = () => {
                   alt="Third slide"
                 />
                 <Carousel.Caption>
-                  <h1>Happy Birthday</h1>
+                
                   <h3>
                     💙J<span>A</span>N<span>E</span>❤️ D<span>E</span>L
                     <span>-</span>A<span>M</span>
