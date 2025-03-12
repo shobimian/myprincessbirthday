@@ -24,7 +24,7 @@ const Poetry = () => {
 
   // ✅ Corrected JSON Fetching
   useEffect(() => {
-    fetch("/Data.json") // Ensure JSON is inside `public/`
+    fetch("./Data.json") // Ensure JSON is inside `public/`
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
