@@ -4,7 +4,7 @@ import "./index.css";
 import { Container, Button } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
-import Data from "./Data.json";
+import Data from "/Data.json";
 import {
 FaAngleDoubleRight,
 FaAngleDoubleLeft,
